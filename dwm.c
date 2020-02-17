@@ -895,7 +895,11 @@ focusstack(const Arg *arg) {
 	int i = stackpos(arg);
 	Client *c, *p;
 
+<<<<<<< HEAD
 	if (!selmon->sel || selmon->sel->isfullscreen)
+=======
+	if(i < 0)
+>>>>>>> 2efea93 (apply dwm-stacker-6.0.diff)
 		return;
 
 	for(p = NULL, c = selmon->clients; c && (i || !ISVISIBLE(c));
