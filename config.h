@@ -159,31 +159,51 @@ static Button buttons[] = {
 void
 setlayoutex(const Arg *arg)
 {
+<<<<<<< HEAD
     setlayout(&((Arg) { .v = &layouts[arg->i] }));
+=======
+	setlayout(&((Arg) { .v = &layouts[arg->i] }));
+>>>>>>> 40fd949 (apply dwm-dwmc-6.2.diff)
 }
 
 void
 viewex(const Arg *arg)
 {
+<<<<<<< HEAD
     view(&((Arg) { .ui = 1 << arg->ui }));
+=======
+	view(&((Arg) { .ui = 1 << arg->ui }));
+>>>>>>> 40fd949 (apply dwm-dwmc-6.2.diff)
 }
 
 void
 viewall(const Arg *arg)
 {
+<<<<<<< HEAD
     view(&((Arg){.ui = ~0}));
+=======
+	view(&((Arg){.ui = ~0}));
+>>>>>>> 40fd949 (apply dwm-dwmc-6.2.diff)
 }
 
 void
 toggleviewex(const Arg *arg)
 {
+<<<<<<< HEAD
     toggleview(&((Arg) { .ui = 1 << arg->ui }));
+=======
+	toggleview(&((Arg) { .ui = 1 << arg->ui }));
+>>>>>>> 40fd949 (apply dwm-dwmc-6.2.diff)
 }
 
 void
 tagex(const Arg *arg)
 {
+<<<<<<< HEAD
     tag(&((Arg) { .ui = 1 << arg->ui }));
+=======
+	tag(&((Arg) { .ui = 1 << arg->ui }));
+>>>>>>> 40fd949 (apply dwm-dwmc-6.2.diff)
 }
 
 void
