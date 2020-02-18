@@ -123,7 +123,7 @@ static Key keys[] = {
         { MODKEY|ShiftMask,             XK_i,           incnmaster,     {.i = -1 } },
         { MODKEY,                       XK_space,       zoom,           {0} },
         { MODKEY|ShiftMask,             XK_space,       togglefloating, {0} },
-        { MODKEY,                       XK_s,           togglesticky,   {0} },
+        /* { MODKEY,                       XK_s,           togglesticky,   {0} }, */
         { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("hover left") },
         { MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD("hover right") },
         { MODKEY,                       XK_q,           killclient,     {0} },
