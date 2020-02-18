@@ -82,7 +82,7 @@ static const char scratchpadname[] = "ScratchPad";
 static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "120x42", NULL };
 
 #include <X11/XF86keysym.h>
-/* #include "shiftview.c" */
+#include "shiftview.c"
 static Key keys[] = {
         /* modifier                     key        function        argument */
         STACKKEYS(MODKEY,                          focus)
@@ -100,10 +100,10 @@ static Key keys[] = {
         { MODKEY|ShiftMask,             XK_0,           tag,            {.ui = ~0 } },
 
         { MODKEY,                       XK_Tab,         view,           {0} },
-        /* { MODKEY,                       XK_semicolon,   shiftview,      { .i = 1 } }, */
-        /* { MODKEY,                       XK_g,           shiftview,      { .i = -1 } }, */
-        /* { MODKEY,                       XK_Page_Down,   shiftview,      { .i = 1 } }, */
-        /* { MODKEY,                       XK_Page_Up,     shiftview,      { .i = -1 } }, */
+        { MODKEY,                       XK_semicolon,   shiftview,      { .i = 1 } },
+        { MODKEY,                       XK_g,           shiftview,      { .i = -1 } },
+        { MODKEY,                       XK_Page_Down,   shiftview,      { .i = 1 } },
+        { MODKEY,                       XK_Page_Up,     shiftview,      { .i = -1 } },
 
         { MODKEY|ShiftMask,             XK_d,           togglegaps,     {0} },
         { MODKEY,                       XK_z,           incrgaps,       {.i = +1 } },
