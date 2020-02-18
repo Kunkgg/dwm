@@ -45,13 +45,6 @@ layouts
 
 fullscreen patches
 
-:   fakefullscreen
-
-    :   Only allow clients to "fullscreen" into space currently given to them.
-    As an example, this will allow you to view a fullscreen video in your browser
-    on one half of the screen, while having the other half available for other tasks.
-
-
 :   actualfullscreen
 
     :   Actually toggle fullscreen for a window, instead of toggling
