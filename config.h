@@ -45,16 +45,12 @@ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] 
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
-#include "fibonacci.c"
+/* #include "fibonacci.c" */
 static const Layout layouts[] = {
         /* symbol     arrange function */
         { "[]=",      tile },    /* first entry is default */
         { "><>",      NULL },    /* no layout function means floating behavior */
         { "[M]",      monocle },
-        /* { "|M|",      centeredmaster }, */
-        /* { ">M>",      centeredfloatingmaster }, */
-        { "[@]",      spiral },
-        { "[\\]",     dwindle },
 };
 
 /* key definitions */
@@ -159,71 +155,71 @@ static Button buttons[] = {
 void
 setlayoutex(const Arg *arg)
 {
-    setlayout(&((Arg) { .v = &layouts[arg->i] }));
+	setlayout(&((Arg) { .v = &layouts[arg->i] }));
 }
 
 void
 viewex(const Arg *arg)
 {
-    view(&((Arg) { .ui = 1 << arg->ui }));
+	view(&((Arg) { .ui = 1 << arg->ui }));
 }
 
 void
 viewall(const Arg *arg)
 {
-    view(&((Arg){.ui = ~0}));
+	view(&((Arg){.ui = ~0}));
 }
 
 void
 toggleviewex(const Arg *arg)
 {
-    toggleview(&((Arg) { .ui = 1 << arg->ui }));
+	toggleview(&((Arg) { .ui = 1 << arg->ui }));
 }
 
 void
 tagex(const Arg *arg)
 {
-    tag(&((Arg) { .ui = 1 << arg->ui }));
+	tag(&((Arg) { .ui = 1 << arg->ui }));
 }
 
 void
 toggletagex(const Arg *arg)
 {
-    toggletag(&((Arg) { .ui = 1 << arg->ui }));
+	toggletag(&((Arg) { .ui = 1 << arg->ui }));
 }
 
 void
 tagall(const Arg *arg)
 {
-    tag(&((Arg){.ui = ~0}));
+	tag(&((Arg){.ui = ~0}));
 }
 
 /* signal definitions */
 /* signum must be greater than 0 */
 /* trigger signals using `xsetroot -name "fsignal:<signame> [<type> <value>]"` */
 static Signal signals[] = {
-    /* signum           function */
-    { "focusstack",     focusstack },
-    { "setmfact",       setmfact },
-    { "togglebar",      togglebar },
-    { "incnmaster",     incnmaster },
-    { "togglefloating", togglefloating },
-    { "focusmon",       focusmon },
-    { "tagmon",         tagmon },
-    { "zoom",           zoom },
-    { "view",           view },
-    { "viewall",        viewall },
-    { "viewex",         viewex },
-    { "toggleview",     view },
-    { "toggleviewex",   toggleviewex },
-    { "tag",            tag },
-    { "tagall",         tagall },
-    { "tagex",          tagex },
-    { "toggletag",      tag },
-    { "toggletagex",    toggletagex },
-    { "killclient",     killclient },
-    { "quit",           quit },
-    { "setlayout",      setlayout },
-    { "setlayoutex",    setlayoutex },
-    /* { "xrdb",           xrdb }, */
+	/* signum           function */
+	{ "focusstack",     focusstack },
+	{ "setmfact",       setmfact },
+	{ "togglebar",      togglebar },
+	{ "incnmaster",     incnmaster },
+	{ "togglefloating", togglefloating },
+	{ "focusmon",       focusmon },
+	{ "tagmon",         tagmon },
+	{ "zoom",           zoom },
+	{ "view",           view },
+	{ "viewall",        viewall },
+	{ "viewex",         viewex },
+	{ "toggleview",     view },
+	{ "toggleviewex",   toggleviewex },
+	{ "tag",            tag },
+	{ "tagall",         tagall },
+	{ "tagex",          tagex },
+	{ "toggletag",      tag },
+	{ "toggletagex",    toggletagex },
+	{ "killclient",     killclient },
+	{ "quit",           quit },
+	{ "setlayout",      setlayout },
+	{ "setlayoutex",    setlayoutex },
+	/* { "xrdb",           xrdb }, */
 };
