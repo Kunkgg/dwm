@@ -105,9 +105,9 @@ static Key keys[] = {
         /* { MODKEY,                       XK_Page_Down,   shiftview,      { .i = 1 } }, */
         /* { MODKEY,                       XK_Page_Up,     shiftview,      { .i = -1 } }, */
 
-        /* { MODKEY|ShiftMask,             XK_d,           togglegaps,     {0} }, */
-        /* { MODKEY,                       XK_z,           incrgaps,       {.i = +1 } }, */
-        /* { MODKEY|ShiftMask,             XK_z,           incrgaps,       {.i = -1 } }, */
+        { MODKEY|ShiftMask,             XK_d,           togglegaps,     {0} },
+        { MODKEY,                       XK_z,           incrgaps,       {.i = +1 } },
+        { MODKEY|ShiftMask,             XK_z,           incrgaps,       {.i = -1 } },
         /* { MODKEY,                       XK_f,           togglefullscr,  {0} }, */
         { MODKEY,                       XK_l,           setmfact,       {.f = +0.05} },
         { MODKEY,                       XK_h,           setmfact,       {.f = -0.05} },
