@@ -1,37 +1,27 @@
-# Kunkgg’s build of dwm
+# Kunkgg's build of dwm
 
-Fork of [LukeSmithxyz](https://github.com/lukesmithxyz/dwm)
+Here's my build of dwm
 
 ## Patches and features
 
-  - xrdb
-    read colors from xrdb (.Xresources)
+xrdb
 
-  - scratchpad
-    scratchpad accessible with mod+shift+enter
+:   read colors from xrdb (.Xresources)
 
-  - sticky
-    windows can be made sticky
+scratchpad
 
-  - stacker
-    provides comprehensive utilities for managing the client stack.
+:   scratchpad accessible with mod+shift+enter
 
-  - noborder
-    Remove the border when there is only one window visible.
 
-  - dwmc
-    Simple dwmc client using a fork of fsignal to communicate with dwm
+sticky
 
-  - vanitygaps
-    like i3-gaps around windows and bar
+:   windows can be made sticky
 
-  - shiftview
-    shiftview to cycle tags
+stacker
 
-  - layouts
-    fibonacci
+:   provides comprehensive utilities for managing the client stack.
 
-    centeredmaster(centeredmaster and centeredfloatingmaster)
+noborder
 
 *   Simple dwmc client using a fork of fsignal to communicate with dwm
 
