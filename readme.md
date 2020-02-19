@@ -4,27 +4,34 @@ Fork of [LukeSmithxyz](https://github.com/lukesmithxyz/dwm)
 
 ## Patches and features
 
-xrdb
+  - xrdb
+    read colors from xrdb (.Xresources)
 
-*   read colors from xrdb (.Xresources)
+  - scratchpad
+    scratchpad accessible with mod+shift+enter
 
-scratchpad
+  - sticky
+    windows can be made sticky
 
-*   scratchpad accessible with mod+shift+enter
+  - stacker
+    provides comprehensive utilities for managing the client stack.
 
-sticky
+  - noborder
+    Remove the border when there is only one window visible.
 
-*   windows can be made sticky
+  - dwmc
+    Simple dwmc client using a fork of fsignal to communicate with dwm
 
-stacker
+  - vanitygaps
+    like i3-gaps around windows and bar
 
-*   provides comprehensive utilities for managing the client stack.
+  - shiftview
+    shiftview to cycle tags
 
-noborder
+  - layouts
+    fibonacci
 
-*   Remove the border when there is only one window visible.
-
-dwmc
+    centeredmaster(centeredmaster and centeredfloatingmaster)
 
 *   Simple dwmc client using a fork of fsignal to communicate with dwm
 
@@ -52,4 +59,3 @@ fullscreen patches
 *   alwaysfullscreen
 
     +   Do not allow the focus to drift from the active fullscreen
-        client when using focusstack().
