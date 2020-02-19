@@ -1,56 +1,46 @@
-# Kunkgg's build of dwm
+# Kunkgg’s build of dwm
 
-Here's my build of dwm
+Fork of [LukeSmithxyz](https://github.com/lukesmithxyz/dwm)
 
 ## Patches and features
 
-xrdb
+  - xrdb
+    read colors from xrdb (.Xresources)
 
-:   read colors from xrdb (.Xresources)
+  - scratchpad
+    scratchpad accessible with mod+shift+enter
 
-scratchpad
+  - sticky
+    windows can be made sticky
 
-:   scratchpad accessible with mod+shift+enter
+  - stacker
+    provides comprehensive utilities for managing the client stack.
 
+  - noborder
+    Remove the border when there is only one window visible.
 
-sticky
+  - dwmc
+    Simple dwmc client using a fork of fsignal to communicate with dwm
 
-:   windows can be made sticky
+  - vanitygaps
+    like i3-gaps around windows and bar
 
-stacker
+  - shiftview
+    shiftview to cycle tags
 
-:   provides comprehensive utilities for managing the client stack.
+  - layouts
+    fibonacci
 
-noborder
+    centeredmaster(centeredmaster and centeredfloatingmaster)
 
-:   Remove the border when there is only one window visible.
+  - fullscreen patches
 
-dwmc
+      - actualfullscreen
+        Actually toggle fullscreen for a window, instead of toggling the
+        status bar and the monocle layout.
 
-:   Simple dwmc client using a fork of fsignal to communicate with dwm
+    <!-- end list -->
 
-vanitygaps
-
-:   like i3-gaps around windows and bar
-
-shiftview
-
-:   shiftview to cycle tags
-
-layouts
-
-:   fibonacci
-
-:   centeredmaster(centeredmaster and centeredfloatingmaster)
-
-fullscreen patches
-
-:   actualfullscreen
-
-    :   Actually toggle fullscreen for a window, instead of toggling
-    the status bar and the monocle layout.
-
-:   alwaysfullscreen
-
-    :   Do not allow the focus to drift from the active fullscreen client
-    when using focusstack().
+      - alwaysfullscreen
+        Do not allow the focus to drift from the active fullscreen
+        client when using focusstack().
