@@ -36,7 +36,11 @@ shiftview
 
 *   shiftview to cycle tags
 
-layouts
+center
+
+*   Add an iscentered rule to automatically center clients on the current monitor.
+
+layouts patches
 
 *   fibonacci
 
