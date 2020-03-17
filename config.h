@@ -34,16 +34,21 @@ static const Rule rules[] = {
          *      WM_CLASS(STRING) = instance, class
          *      WM_NAME(STRING) = title
          */
-        /* class      instance    title       tags mask     isfloating   monitor */
-        /* { "Gimp",     NULL,       NULL,       0,            1,           -1 }, */
-        { "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-        { NULL,       NULL,       NULL,       0,            0,       -1 },
+        /* class                  instance    title       tags mask     isfloating   monitor */
+        { "Gimp",                 NULL,       NULL,       1 << 2,       1,           -1 },
+        { "firefox",              NULL,       NULL,       1 << 1,       0,           -1 },
+        { "Brave-browser",        NULL,       NULL,       1 << 1,       0,           -1 },
+        { "Pavucontrol",          NULL,       NULL,       0,            1,           -1 },
+        { "Nvidia-settings",      NULL,       NULL,       0,            1,           -1 },
+        { "Ibus-setup",           NULL,       NULL,       0,            1,           -1 },
+        { "Ibus-setup-libpinyin", NULL,       NULL,       0,            1,           -1 },
+        { NULL,                   NULL,       NULL,       0,            0,           -1 },
 };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 #include "fibonacci.c"
 static const Layout layouts[] = {
@@ -128,15 +133,15 @@ static Key keys[] = {
         { MODKEY,                       XK_space,       zoom,           {0} },
         { MODKEY|ShiftMask,             XK_space,       togglefloating, {0} },
         { MODKEY,                       XK_s,           togglesticky,   {0} },
-        { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("hover left") },
-        { MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD("hover right") },
+        { MODKEY|ShiftMask,		        XK_b,		    spawn,		    SHCMD("hover left") },
+        { MODKEY|ShiftMask,		        XK_n,		    spawn,		    SHCMD("hover right") },
         { MODKEY,                       XK_q,           killclient,     {0} },
 
         { MODKEY,                       XK_Return,      spawn,          {.v = termcmd } },
         { MODKEY|ShiftMask,             XK_Return,      togglescratch,  {.v = scratchpadcmd } },
         { MODKEY,                       XK_d,           spawn,          {.v = dmenucmd } },
 
-        { MODKEY,                       XK_F2,          quit,           {0} },
+        /* { MODKEY,                       XK_F2,          quit,           {0} }, */
 };
 
 /* button definitions */
