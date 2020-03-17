@@ -42,7 +42,6 @@ static const Rule rules[] = {
     { "Nvidia-settings",       NULL,     NULL,  0,         1,          -1 },
     { "Ibus-setup",            NULL,     NULL,  0,         1,          -1 },
     { "Ibus-setup-libpinyin",  NULL,     NULL,  0,         1,          -1 },
-    { NULL,                    NULL,     NULL,  0,         0,          -1 },
 };
 
 /* layout(s) */
