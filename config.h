@@ -21,28 +21,28 @@ static char selfgcolor[]            = "#222222";
 static char selbordercolor[]        = "#49AEE6";
 static char selbgcolor[]            = "#FEA44C";
 static char *colors[][3] = {
-       /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+    /*               fg           bg           border   */
+    [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+    [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
-        /* xprop(1):
-         *      WM_CLASS(STRING) = instance, class
-         *      WM_NAME(STRING) = title
-         */
-        /* class                  instance    title       tags mask     isfloating   monitor */
-        { "Gimp",                 NULL,       NULL,       1 << 2,       1,           -1 },
-        { "firefox",              NULL,       NULL,       1 << 1,       0,           -1 },
-        { "Brave-browser",        NULL,       NULL,       1 << 1,       0,           -1 },
-        { "Pavucontrol",          NULL,       NULL,       0,            1,           -1 },
-        { "Nvidia-settings",      NULL,       NULL,       0,            1,           -1 },
-        { "Ibus-setup",           NULL,       NULL,       0,            1,           -1 },
-        { "Ibus-setup-libpinyin", NULL,       NULL,       0,            1,           -1 },
-        { NULL,                   NULL,       NULL,       0,            0,           -1 },
+    /* xprop(1):
+     *      WM_CLASS(STRING) = instance, class
+     *      WM_NAME(STRING) = title
+     */
+    /* class                   instance  title  tags mask  isfloating  monitor */
+    { "Gimp",                  NULL,     NULL,  1 << 2,    1,          -1 },
+    { "firefox",               NULL,     NULL,  1 << 1,    0,          -1 },
+    { "Brave-browser",         NULL,     NULL,  1 << 1,    0,          -1 },
+    { "Pavucontrol",           NULL,     NULL,  0,         1,          -1 },
+    { "Nvidia-settings",       NULL,     NULL,  0,         1,          -1 },
+    { "Ibus-setup",            NULL,     NULL,  0,         1,          -1 },
+    { "Ibus-setup-libpinyin",  NULL,     NULL,  0,         1,          -1 },
+    { NULL,                    NULL,     NULL,  0,         0,          -1 },
 };
 
 /* layout(s) */
