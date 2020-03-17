@@ -42,6 +42,8 @@ layouts
 
 *   centeredmaster(centeredmaster and centeredfloatingmaster)
 
+*   pertag, keeps layout, mwfact, barpos and nmaster per tag.
+
 fullscreen patches
 
 *   actualfullscreen
