@@ -40,6 +40,11 @@ center
 
 *   Add an iscentered rule to automatically center clients on the current monitor.
 
+save floats
+
+*   Saves size and position of every floating window before it is forced into tiled mode.
+    If the window is made floating again, the old dimensions will be restored.
+
 layouts patches
 
 *   fibonacci
