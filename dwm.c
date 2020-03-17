@@ -1346,9 +1346,10 @@ propertynotify(XEvent *e)
 	Window trans;
 	XPropertyEvent *ev = &e->xproperty;
 
-	if ((ev->window == root) && (ev->atom == XA_WM_NAME))
+	if ((ev->window == root) && (ev->atom == XA_WM_NAME)) {
 		if (!fake_signal())
 			updatestatus();
+    }
 	else if (ev->state == PropertyDelete)
 		return; /* ignore */
 	else if ((c = wintoclient(ev->window))) {
@@ -2488,8 +2489,8 @@ main(int argc, char *argv[])
 	if (!(dpy = XOpenDisplay(NULL)))
 		die("dwm: cannot open display");
 	checkotherwm();
-        XrmInitialize();
-        loadxrdb();
+    XrmInitialize();
+    loadxrdb();
 	setup();
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec", NULL) == -1)
