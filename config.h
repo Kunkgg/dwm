@@ -42,6 +42,7 @@ static const Rule rules[] = {
     { "Nvidia-settings",       NULL,     NULL,  0,         1,          1,          -1 },
     { "Ibus-setup",            NULL,     NULL,  0,         1,          1,          -1 },
     { "Ibus-setup-libpinyin",  NULL,     NULL,  0,         1,          1,          -1 },
+    { "Steam",                 NULL,     NULL,  1 << 3,    0,          1,          -1 },
 };
 
 /* layout(s) */
@@ -83,11 +84,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, \
-                                  "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run_history", NULL };
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char scratchpadname[] = "ScratchPad";
-static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "90x42", NULL };
+static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "96x48", NULL };
 
 #include <X11/XF86keysym.h>
 #include "shiftview.c"
