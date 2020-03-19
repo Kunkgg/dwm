@@ -36,6 +36,8 @@ static const Rule rules[] = {
      */
 	/* class                   instance  title  tags mask  iscentered  isfloating  monitor */
     { "Gimp",                  NULL,     NULL,  1 << 2,    0,          1,          -1 },
+    { "VirtualBox Manager",    NULL,     NULL,  1 << 2,    0,          0,          -1 },
+    { "VirtualBox",            NULL,     NULL,  1 << 2,    0,          1,          -1 },
     { "firefox",               NULL,     NULL,  1 << 1,    0,          0,          -1 },
     { "Brave-browser",         NULL,     NULL,  1 << 1,    0,          0,          -1 },
     { "Pavucontrol",           NULL,     NULL,  0,         1,          1,          -1 },
@@ -109,13 +111,13 @@ static Key keys[] = {
 
         { MODKEY,                       XK_Tab,         view,           {0} },
         { MODKEY,                       XK_semicolon,   shiftview,      { .i = 1 } },
-        { MODKEY,                       XK_g,           shiftview,      { .i = -1 } },
+        { MODKEY,                       XK_comma,       shiftview,      { .i = -1 } },
         { MODKEY,                       XK_Page_Down,   shiftview,      { .i = 1 } },
         { MODKEY,                       XK_Page_Up,     shiftview,      { .i = -1 } },
 
-        { MODKEY|ShiftMask,             XK_d,           togglegaps,     {0} },
-        { MODKEY,                       XK_z,           incrgaps,       {.i = +1 } },
-        { MODKEY|ShiftMask,             XK_z,           incrgaps,       {.i = -1 } },
+        /* { MODKEY|ShiftMask,             XK_d,           togglegaps,     {0} }, */
+        /* { MODKEY,                       XK_z,           incrgaps,       {.i = +1 } }, */
+        /* { MODKEY|ShiftMask,             XK_z,           incrgaps,       {.i = -1 } }, */
         { MODKEY,                       XK_f,           togglefullscr,  {0} },
         { MODKEY,                       XK_l,           setmfact,       {.f = +0.05} },
         { MODKEY,                       XK_h,           setmfact,       {.f = -0.05} },
@@ -229,5 +231,6 @@ static Signal signals[] = {
     { "quit",           quit },
     { "setlayout",      setlayout },
     { "setlayoutex",    setlayoutex },
-    /* { "xrdb",           xrdb }, */
+    { "xrdb",           xrdb },
+    { "togglegaps",     togglegaps },
 };
