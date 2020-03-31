@@ -34,17 +34,18 @@ static const Rule rules[] = {
      *      WM_CLASS(STRING) = instance, class
      *      WM_NAME(STRING) = title
      */
-	/* class                   instance  title  tags mask  iscentered  isfloating  monitor */
-    { "Gimp",                  NULL,     NULL,  1 << 2,    0,          1,          -1 },
-    { "VirtualBox Manager",    NULL,     NULL,  1 << 2,    0,          0,          -1 },
-    { "VirtualBox",            NULL,     NULL,  1 << 2,    0,          1,          -1 },
-    { "firefox",               NULL,     NULL,  0,         0,          0,          -1 },
-    { "Brave-browser",         NULL,     NULL,  0,         0,          0,          -1 },
-    { "Pavucontrol",           NULL,     NULL,  0,         1,          1,          -1 },
-    { "Nvidia-settings",       NULL,     NULL,  0,         1,          1,          -1 },
-    { "Ibus-setup",            NULL,     NULL,  0,         1,          1,          -1 },
-    { "Ibus-setup-libpinyin",  NULL,     NULL,  0,         1,          1,          -1 },
-    { "Steam",                 NULL,     NULL,  1 << 3,    0,          1,          -1 },
+	/* class                   instance         title           tags mask  iscentered  isfloating  monitor */
+    { "Gimp",                  NULL,            NULL,           1 << 2,    0,          1,          -1 },
+    { "VirtualBox Manager",    NULL,            NULL,           1 << 2,    0,          0,          -1 },
+    { "VirtualBox",            NULL,            NULL,           1 << 2,    0,          1,          -1 },
+    { "firefox",               NULL,            NULL,           0,         0,          0,          -1 },
+    { "Brave-browser",         NULL,            NULL,           0,         0,          0,          -1 },
+    { "Pavucontrol",           NULL,            NULL,           0,         1,          1,          -1 },
+    { "Nvidia-settings",       NULL,            NULL,           0,         1,          1,          -1 },
+    { "Ibus-setup",            NULL,            NULL,           0,         1,          1,          -1 },
+    { "Ibus-setup-libpinyin",  NULL,            NULL,           0,         1,          1,          -1 },
+    { "Steam",                 NULL,            NULL,           1 << 3,    0,          1,          -1 },
+    { "URxvt",                 "pick emoji",    "fzf_emoji",    0,         1,          1,          -1 },
 };
 
 /* layout(s) */
