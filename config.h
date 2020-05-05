@@ -90,9 +90,10 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run_history", NULL };
-static const char *termcmd[]  = { "urxvtc", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "ScratchPad";
-static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "96x32", NULL };
+/* static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "96x32", NULL }; */
+static const char *scratchpadcmd[] = { "alacritty", "--title", scratchpadname, "--dimensions", "96", "32", NULL };
 
 #include <X11/XF86keysym.h>
 #include "shiftview.c"
