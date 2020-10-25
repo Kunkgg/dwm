@@ -1718,7 +1718,7 @@ setgaps(int oh, int ov, int ih, int iv)
 	arrange(selmon);
 }
 
-voig
+void
 togglegaps(const Arg *arg)
 {
 	enablegaps = !enablegaps;
