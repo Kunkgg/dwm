@@ -70,8 +70,8 @@ static const Rule rules[] = {
     { "Electron",              "electron",      NULL,           1 << 8,    1,          1,          -1 },
     { "code-oss",              "code-oss",      NULL,           1 << 8,    1,          1,          -1 },
     { "Alacritty",             "Alacritty",     "Dict",         0,         1,          1,          -1 },
-	{ NULL,                    "spterm",        NULL,           SPTAG(0),  1,          1,          -1 },
-	{ NULL,                    "spfm",          NULL,           SPTAG(1),  1,          1,          -1 },
+	{ "Alacritty",             "Alacritty",        "spterm",           SPTAG(0),  1,          1,          -1 },
+	{ "Alacritty",             "Alacritty",         "spfm",           SPTAG(1),  1,          1,          -1 },
 };
 
 /* layout(s) */
