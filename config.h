@@ -26,6 +26,23 @@ static char *colors[][3] = {
     [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
+typedef struct {
+	const char *name;
+	const void *cmd;
+} Sp;
+
+static const char terminal[] = "alacritty";
+static const char fm[] = "ranger";
+const char *spcmd1[] = {terminal, "--title", "spterm", "--dimensions", "120", "34", NULL };
+const char *spcmd2[] = {terminal, "--title", "spfm", "--dimensions", "144", "41", "-e", fm, NULL };
+/* const char *spcmd3[] = {"keepassxc", NULL }; */
+
+static Sp scratchpads[] = {
+	/* name          cmd  */
+	{"spterm",      spcmd1},
+	{"spfm",        spcmd2},
+	/* {"keepassxc",   spcmd3}, */
+};
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -53,6 +70,8 @@ static const Rule rules[] = {
     { "Electron",              "electron",      NULL,           1 << 8,    1,          1,          -1 },
     { "code-oss",              "code-oss",      NULL,           1 << 8,    1,          1,          -1 },
     { "Alacritty",             "Alacritty",     "Dict",         0,         1,          1,          -1 },
+	{ "Alacritty",             "Alacritty",        "spterm",           SPTAG(0),  1,          1,          -1 },
+	{ "Alacritty",             "Alacritty",         "spfm",           SPTAG(1),  1,          1,          -1 },
 };
 
 /* layout(s) */
@@ -97,9 +116,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run_history", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char scratchpadname[] = "ScratchPad";
+/* static const char scratchpadname[] = "ScratchPad"; */
 /* static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "96x32", NULL }; */
-static const char *scratchpadcmd[] = { "alacritty", "--title", scratchpadname, "--dimensions", "96", "32", NULL };
+/* static const char *scratchpadcmd[] = { "alacritty", "--title", scratchpadname, "--dimensions", "96", "32", NULL }; */
 
 #include <X11/XF86keysym.h>
 #include "shiftview.c"
@@ -149,10 +168,11 @@ static Key keys[] = {
         { MODKEY,                       XK_q,           killclient,     {0} },
 
         { MODKEY,                       XK_Return,      spawn,          {.v = termcmd } },
-        { MODKEY|ShiftMask,             XK_Return,      togglescratch,  {.v = scratchpadcmd } },
+        { MODKEY|ShiftMask,             XK_Return,      togglescratch,  {.ui = 0 } },
+        { MODKEY,            			XK_grave,  	    togglescratch,  {.ui = 1 } },
+        /* { MODKEY|ShiftMask,          XK_Return,      togglescratch,  {.v = scratchpadcmd } }, */
+        /* { MODKEY,            		XK_x,	        togglescratch,  {.ui = 2 } }, */
         { MODKEY,                       XK_d,           spawn,          {.v = dmenucmd } },
-
-        /* { MODKEY,                       XK_F2,          quit,           {0} }, */
 };
 
 /* button definitions */
