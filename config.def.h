@@ -24,6 +24,25 @@ static char *colors[][3] = {
        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
+typedef struct {
+	const char *name;
+	const void *cmd;
+} Sp;
+
+static const char terminal[] = "alacritty";
+static const char fm[] = "ranger";
+const char *spcmd1[] = {terminal, "--title", "spterm", "--dimensions", "120", "34", NULL };
+const char *spcmd2[] = {terminal, "--title", "spfm", "--dimensions", "144", "41", "-e", fm, NULL };
+/* const char *spcmd3[] = {"keepassxc", NULL }; */
+
+static Sp scratchpads[] = {
+	/* name          cmd  */
+	{"spterm",      spcmd1},
+	{"spranger",    spcmd2},
+	/* {"keepassxc",   spcmd3}, */
+};
+
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -35,6 +54,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     iscentered     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            0,             1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,             0,           -1 },
+	{ NULL,       "spterm",   NULL,       SPTAG(0),     1,             1,           -1 },
+	{ NULL,       "spfm",     NULL,       SPTAG(1),     1,             1,           -1 },
 };
 
 /* layout(s) */
@@ -84,7 +105,10 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+	/* { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } }, */
+	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 0 } },
+	{ MODKEY,            			XK_u,	   togglescratch,  {.ui = 1 } },
+	{ MODKEY,            			XK_x,	   togglescratch,  {.ui = 2 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
