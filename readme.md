@@ -8,9 +8,11 @@ xrdb
 
 *   read colors from xrdb (.Xresources)
 
-scratchpad
+scratchpads
 
-*   scratchpad accessible with mod+shift+enter
+*   scratchpad0: alacritty terminal, mod+shift+enter
+
+*   scratchpad1: ranger fm, mod+grave
 
 sticky
 
