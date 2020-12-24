@@ -33,14 +33,17 @@ typedef struct {
 
 static const char terminal[] = "alacritty";
 static const char fm[] = "ranger";
+static const char clipboard[] = "copyq toggle";
 const char *spcmd1[] = {terminal, "--title", "spterm", "--dimensions", "120", "34", NULL };
 const char *spcmd2[] = {terminal, "--title", "spfm", "--dimensions", "144", "41", "-e", fm, NULL };
+const char *spcmd3[] = {terminal, "--title", "spclipboard", "--dimensions", "144", "41", "-e", clipboard, NULL };
 /* const char *spcmd3[] = {"keepassxc", NULL }; */
 
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
-	{"spfm",        spcmd2},
+	{"spclipboard", spcmd3},
+	/* {"spfm",        spcmd2}, */
 	/* {"keepassxc",   spcmd3}, */
 };
 /* tagging */
@@ -65,13 +68,14 @@ static const Rule rules[] = {
     { "Blueman-assistant",     NULL,            NULL,           0,         1,          1,          -1 },
     { "Ibus-setup",            NULL,            NULL,           0,         1,          1,          -1 },
     { "Ibus-setup-libpinyin",  NULL,            NULL,           0,         1,          1,          -1 },
-    { "Steam",                 NULL,            NULL,           1 << 3,    0,          1,          -1 },
     { "URxvt",                 "pick emoji",    "fzf_emoji",    0,         1,          1,          -1 },
+    { "Steam",                 NULL,            NULL,           1 << 3,    0,          1,          -1 },
     { "Electron",              "electron",      NULL,           1 << 8,    1,          1,          -1 },
     { "code-oss",              "code-oss",      NULL,           1 << 8,    1,          1,          -1 },
     { "Alacritty",             "Alacritty",     "Dict",         0,         1,          1,          -1 },
-	{ "Alacritty",             "Alacritty",        "spterm",           SPTAG(0),  1,          1,          -1 },
-	{ "Alacritty",             "Alacritty",         "spfm",           SPTAG(1),  1,          1,          -1 },
+	{ "Alacritty",             "Alacritty",     "spterm",       SPTAG(0),  1,          1,          -1 },
+	/* { "Alacritty",             "Alacritty",     "spfm",         SPTAG(1),  1,          1,          -1 }, */
+	{ "copyq",                  NULL,           NULL,           SPTAG(1),    1,          1,          -1 },
 };
 
 /* layout(s) */
