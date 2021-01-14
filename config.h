@@ -34,7 +34,7 @@ typedef struct {
 static const char terminal[] = "alacritty";
 static const char fm[] = "ranger";
 static const char clipboard[] = "copyq toggle";
-const char *spcmd1[] = {terminal, "--title", "spterm", "--dimensions", "120", "34", NULL };
+const char *spcmd1[] = {terminal, "--title", "spterm", "--option", "window.dimensions.columns=120", "--option", "window.dimensions.lines=34", NULL };
 const char *spcmd2[] = {terminal, "--title", "spfm", "--dimensions", "144", "41", "-e", fm, NULL };
 const char *spcmd3[] = {terminal, "--title", "spclipboard", "--dimensions", "144", "41", "-e", clipboard, NULL };
 /* const char *spcmd3[] = {"keepassxc", NULL }; */
